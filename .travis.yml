@@ -1,31 +1,20 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=ABC123
-language:
- — ruby
-rvm:
- — 2.5.0
-cache:
- — bundler
+  - CC_TEST_REPORTER_ID=7271f559446868f091c8dcea51b42432be622a6afb9a6de9dc266ae3f6c9994b
+language: "— ruby"
+rvm: "— 2.5.0"
+cache: "— bundler"
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
-  - bundle install && bin/rails db:create && bin/rails db:migrate && bundle exec rspec
-services:
-  - postgresql
+- bundle install && bin/rails db:create && bin/rails db:migrate && bundle exec rspec
+services: "— postgresql"
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-services:
- — postgresql
-
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 deploy:
   provider: heroku
- api_key:
-  secure: "ENCRYPTED_KEY_HERE"
-app: heroku-app-name-here
-  on:
- repo: github-username-here/repo-name-here
-
-
+  api_key:
+    secure: NxF/bR+0+tl7fp71AQ6aJgKFVtwRMyCRHRm5Kbv2I5+EdrbFfefNOBLipWHpkmNLenMtO6upWOWXHjXee1Av61JfuKrSb8/wL2CSUd0tI++YFfc7F3HdX/ktr4Fj07ki2a7GyuRPHGmG13EcJV6DIejFbpkBVueP5oVh+oC5KJZ7G/U06GICW58Tnu24g8qMo2iTqpDaAsToRL+D07UTnl7h9UUcaCg7B0B6GQ/rXoDaM6gI2Vu7GOTfbBX3Fc4Y8+FALX1+MSaHDKCvIfGV/ZY6k9cRqY5vR5KSal4pc2c2tq2/pD8p4aVUSSNhHA7HriGp8YUdElqZkIQG2LKv9AMFspaOxnypabvyIHoeWJDZpn2z8PCAm+mMqmv9JHx0k7VZy35Kc0bNFMLsuI4IMyzFSKBU5RwmQxjXwiIEO0Sn9aOAzIRCOYQTcFM/Ebpa2A2TVU/9NTqQGrAg/T4EeIZyyNm2ozdY4j1RP7OIo6ytFe2kgg+D2DsMotVokxy2pFyifKW0d63Fty0AwhtHF+y5K/o5ToXgBPG738RVfsovsR3aYZp8bHzKcwHUoI7uncu323UHWyPjuG59lzyJ+9g9xFR+jhggaVYlpiYtx1ylOr3clqG5AsEDyAKOJDWQKm1TmnLSJYgcE0Yla7jIUtvpZYhHOOcBs7yfBbTjxPc=
