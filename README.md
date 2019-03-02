@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/aidengleave/instagram-challenge.svg?branch=master)](https://travis-ci.org/aidengleave/instagram-challenge)
+[![Maintainability](https://api.codeclimate.com/v1/badges/46787c34ce3f6a62400b/maintainability)](https://codeclimate.com/github/aidengleave/instagram-challenge/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/46787c34ce3f6a62400b/test_coverage)](https://codeclimate.com/github/aidengleave/instagram-challenge/test_coverage)
 Instagram Challenge
 ===================
 
